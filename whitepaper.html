@@ -7,10 +7,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <h1 class="eqnoir-title">EQNOIR</h1>
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <div class="ticker-move" id="ticker-text">
+        Loading live EQNOIR data...
+      </div>
     </div>
+  </div>
+
+  <header>
+    <h1 class="eqnoir-title">EQNOIR</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -23,58 +29,44 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>EQNOIR Whitepaper</h2>
-    <p>Version 1.0 — July 2025</p>
-    <a href="assets/docs/EQNOIR_Whitepaper_v1.0.pdf" target="_blank" class="btn">
-      📄 Download Full Whitepaper (PDF)
-    </a>
-  </section>
-
-  <section class="content">
-    <h3>The Future of Decentralized Financial Empowerment</h3>
-    <p>
-      EQNOIR represents a paradigm shift in decentralized finance (DeFi), engineered to empower underserved
-      communities globally. Built on the BNB Smart Chain, it delivers secure, transparent, and accessible financial tools.
-    </p>
-
-    <h3>Technical Architecture</h3>
-    <p>
-      The EQNOIR protocol leverages the BNB Smart Chain for scalability and low transaction costs.
-      Smart contracts incorporate automatic burns, anti-whale limits, and multi-signature DAO controls.
-    </p>
-
-    <h3>Tokenomics</h3>
-    <ul>
-      <li><strong>Total Supply:</strong> 1 Quadrillion EQNOIR</li>
-      <li><strong>Reserves:</strong> Founders Reserve, DAO Treasury, Staking Pool, Community Incentives</li>
-      <li><strong>Liquidity Pool:</strong> Locked and paired with BNB for price stability</li>
-      <li><strong>Burn Strategy:</strong> Periodic burns reduce supply and increase long-term value</li>
-    </ul>
-
-    <h3>Governance</h3>
-    <p>
-      The EQNOIR DAO enables token holders to propose and vote on ecosystem upgrades and treasury
-      allocations. A multi-signature wallet ensures transparency and decentralized control.
-    </p>
-
-    <h3>Roadmap</h3>
-    <ul>
-      <li><strong>Phase 1:</strong> Token launch, liquidity provision, initial burns</li>
-      <li><strong>Phase 2:</strong> Staking mechanisms, NFT ecosystem, partnerships</li>
-      <li><strong>Phase 3:</strong> Real-world applications in real estate, wellness, and fintech</li>
-    </ul>
-
-    <h3>Conclusion</h3>
-    <p>
-      EQNOIR isn’t just a token — it’s a movement redefining access to wealth and opportunity.
-      By combining sound tokenomics, robust architecture, and community-led governance,
-      EQNOIR is positioned as a transformative force in DeFi.
-    </p>
-  </section>
+  <main class="content">
+    
+        <h2>EQNOIR Whitepaper</h2>
+        <p>Version 1.0 — July 2025</p>
+        <a href='assets/docs/EQNOIR_Whitepaper_v1.0.pdf' target='_blank' class='btn'>Download Whitepaper (PDF)</a>
+        <iframe src='assets/docs/EQNOIR_Whitepaper_v1.0.pdf' width='90%' height='700px' style='border:1px solid gold;border-radius:8px;margin-top:30px;'></iframe>
+        
+  </main>
 
   <footer>
+    <div class="social-icons">
+      <a href="https://x.com/eqnoirproject" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></a>
+      <a href="https://instagram.com/eqnoirlabs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></a>
+      <a href="https://t.me/EQNOIR1" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
+      <a href="https://discord.gg/yAWvPXhfs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord"></a>
+    </div>
     <p>© 2025 EQNOIR — Empowering Black Legacy.</p>
   </footer>
+
+  <script>
+  async function fetchTickerData() {
+    try {
+      const response = await fetch('https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x47ab12e013f1289c8c5f83f962fc01bb496beaa4');
+      const data = await response.json();
+      const pool = data.data.attributes;
+      const price = parseFloat(pool.base_token_price_usd).toFixed(12);
+      const volume = pool.volume_usd.h24.toLocaleString();
+      const liquidity = (pool.reserve_in_usd / 1000).toFixed(2);
+      const fdv = (pool.fdv_usd / 1000).toFixed(2);
+      const holders = pool.holders || '44';
+      document.getElementById('ticker-text').innerText =
+        `EQNOIR (WBNB) | PRICE: $${price} | 24H VOL: $${volume} | LIQUIDITY: $${liquidity}K | FDV: $${fdv}K | HOLDERS: ${holders} | THE FUTURE IS BLACK. THE FUTURE IS EQNOIR.`;
+    } catch (e) {
+      document.getElementById('ticker-text').innerText = "EQNOIR — Empowering Black Legacy. Data unavailable.";
+    }
+  }
+  fetchTickerData();
+  setInterval(fetchTickerData, 3600000);
+  </script>
 </body>
 </html>

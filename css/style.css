@@ -1,184 +1,102 @@
-/* ------------------------------
-   EQNOIR: Global Launch v2.2
-   Theme: Black & Matte Gold
-   ------------------------------ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
-:root {
-  --black: #000000;
-  --gold: #c8a84e;
-  --gold-soft: #e6d18b;
-  --font-main: 'Inter', sans-serif;
-}
 
 body {
-  background: url("../assets/branding/eqnoir-bg-city.jpg") no-repeat center center fixed;
-  background-size: cover;
-  background-color: #000;
-  color: #FFD700;
-  font-family: "Poppins", sans-serif;
   margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #FFD700;
+  background: url('../assets/branding/eqnoir-bg-city.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
-/* add subtle overlay for readability */
-body::before {
-  content: "";
+.ticker-wrap {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-}
-
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #000;
-  padding: 15px 40px;
-  border-bottom: 1px solid var(--gold);
-  position: sticky;
-  top: 0;
+  color: #FFD700;
+  border-bottom: 1px solid #FFD700;
   z-index: 1000;
+  overflow: hidden;
 }
 
-header .header-left {
+.ticker {
   display: flex;
   align-items: center;
+  height: 40px;
 }
 
-.fist-icon {
-  width: 36px;
-  height: 36px;
-  margin-right: 10px;
-  animation: pulseGold 3s infinite ease-in-out;
+.ticker-move {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tickerScroll 60s linear infinite;
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+header {
+  text-align: center;
+  padding: 100px 20px 20px;
 }
 
 .eqnoir-title {
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  font-size: 1.8rem;
-  color: var(--gold);
-  animation: pulseGold 3s infinite ease-in-out;
+  font-size: 3em;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255,215,0,0.8);
+  animation: pulse 2.5s infinite alternate;
 }
 
-/* Navigation */
+@keyframes pulse {
+  0% { text-shadow: 0 0 5px rgba(255,215,0,0.3); }
+  100% { text-shadow: 0 0 20px rgba(255,215,0,0.8); }
+}
+
 nav a {
-  color: var(--gold);
+  color: #FFD700;
   text-decoration: none;
   margin: 0 10px;
-  font-weight: 600;
-  transition: color 0.3s;
 }
-
 nav a:hover {
-  color: var(--gold-soft);
+  color: white;
 }
 
-#language-switch {
-  background: var(--black);
-  color: var(--gold);
-  border: 1px solid var(--gold);
-  padding: 4px 6px;
-  margin-left: 15px;
-}
-
-/* Gold Pulse Animation */
-@keyframes pulseGold {
-  0%, 100% { filter: drop-shadow(0 0 0px var(--gold)); }
-  50% { filter: drop-shadow(0 0 8px var(--gold-soft)); }
-}
-
-/* Global Ticker */
-.ticker {
-  width: 100%;
-  background-color: #111;
-  color: var(--gold);
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
-}
-
-.ticker-inner {
-  display: inline-block;
-  padding: 10px 0;
-  animation: tickerMove 30s linear infinite;
-}
-
-@keyframes tickerMove {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
-}
-
-/* Hero Section */
-.hero {
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.content {
   text-align: center;
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  padding: 140px 20px;
+  background: rgba(0, 0, 0, 0.55);
+  min-height: 75vh;
+  border-radius: 10px;
 }
 
-.hero-logo {
-  width: 240px;
-  height: auto;
-  margin-bottom: 20px;
-  animation: pulseGold 3s infinite ease-in-out;
-}
-
-.hero-content h2 {
-  max-width: 600px;
-  font-weight: 400;
-  line-height: 1.4em;
-  margin-bottom: 25px;
-}
-
-.buttons .btn {
+.btn {
   display: inline-block;
-  padding: 10px 20px;
-  margin: 5px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
+  margin: 15px;
+  padding: 12px 28px;
+  border: 1px solid #FFD700;
+  color: #FFD700;
   text-decoration: none;
-  font-weight: 600;
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
-
-.buttons .btn:hover {
-  background-color: var(--gold);
-  color: var(--black);
+.btn:hover {
+  background-color: #FFD700;
+  color: black;
 }
 
-/* Footer */
 footer {
-  border-top: 1px solid var(--gold);
-  padding: 25px 20px;
   text-align: center;
-  font-size: 0.9rem;
+  padding: 40px 0;
+  background: rgba(0,0,0,0.65);
 }
 
-.socials {
-  margin-bottom: 10px;
+.social-icons img {
+  width: 30px;
+  margin: 0 10px;
+  filter: invert(86%) sepia(57%) saturate(749%) hue-rotate(8deg) brightness(103%) contrast(102%);
+  transition: transform 0.3s, filter 0.3s;
 }
-
-.socials a {
-  color: var(--gold);
-  text-decoration: none;
-  margin: 0 8px;
-  transition: color 0.3s;
-}
-
-.socials a:hover {
-  color: var(--gold-soft);
+.social-icons img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(255,215,0,0.8));
 }
