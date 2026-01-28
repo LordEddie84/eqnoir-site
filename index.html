@@ -3,72 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EQNOIR — Empowering Black Legacy</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>EQNOIR</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="ticker-wrap">
-    <div class="ticker">
-      <div class="ticker-move" id="ticker-text">
-        Loading live EQNOIR data...
-      </div>
+
+  <!-- LIVE TICKER -->
+  <div id="eqnoir-ticker" class="ticker-container">
+    <div class="ticker-content" id="ticker-content">
+      <span class="ticker-item" id="market-data">Loading market data...</span>
+      <span class="ticker-item">🪙 Crypto Market Data | EQNOIR is not financial advice. Participation involves risk. Do your own research.</span>
+      <span class="ticker-item">Market data shown is informational only and not a recommendation.</span>
+      <span class="ticker-item">No profits, returns, or price guarantees are implied.</span>
+      <span class="ticker-item">A Digital Reserve for the Dynasty Era</span>
+      <span class="ticker-item">Built for Generational Power • Digital Reserve on Blockchain</span>
     </div>
   </div>
 
-  <header>
-    <h1 class="eqnoir-title">EQNOIR</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="purchase.html">Purchase EQNOIR</a>
-      <a href="noirhaus.html">NoirHaus</a>
-      <a href="provision.html">Provision Grid</a>
-      <a href="nexus.html">Nexus Housing</a>
-      <a href="community.html">Community</a>
-      <a href="whitepaper.html">Whitepaper</a>
-    </nav>
-  </header>
+  <!-- NAVIGATION -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">The Dynasty</a></li>
+      <li><a href="#">The Reserve (Token Info)</a></li>
+      <li><a href="#">NOIRHAUSE</a></li>
+      <li><a href="#">The Build</a></li>
+      <li><a href="#">The Path</a></li>
+      <li><a href="#">The Circle</a></li>
+      <li><a href="#">Enter the Digital Reserve</a></li>
+    </ul>
+  </nav>
 
-  <main class="content">
-    
-        <section class="hero">
-          <h2>Empowering Black Legacy</h2>
-          <p>Welcome to EQNOIR — the future of decentralized wealth, innovation, and community evolution.</p>
-          <a href="purchase.html" class="btn">Purchase EQNOIR</a>
-          <a href="whitepaper.html" class="btn">Read Whitepaper</a>
-        </section>
-        
-  </main>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>EQNOIR</h1>
+    <p>Built for Generational Power • Digital Reserve on Blockchain</p>
+    <a href="#" class="btn-primary">Enter the Digital Reserve</a>
+    <a href="#" class="btn-secondary">Explore the Token</a>
+  </section>
 
-  <footer>
-    <div class="social-icons">
-      <a href="https://x.com/eqnoirproject" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></a>
-      <a href="https://instagram.com/eqnoirlabs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram"></a>
-      <a href="https://t.me/EQNOIR1" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram"></a>
-      <a href="https://discord.gg/yAWvPXhfs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord"></a>
+  <!-- THREE-PILLAR SECTION -->
+  <section class="three-pillars">
+    <div class="pillar">
+      🪙 Token Utility
+      <p>EQNOIR powers the digital reserve ecosystem</p>
     </div>
-    <p>© 2025 EQNOIR — Empowering Black Legacy.</p>
+    <div class="pillar">
+      🌐 Community
+      <p>A global network of holders and contributors</p>
+    </div>
+    <div class="pillar">
+      🔗 Blockchain
+      <p>Secure, decentralized, and future-proof</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="eqnoir-footer">
+    <div class="footer-label">
+      Official Crypto Channels & Token Info
+    </div>
+    <div class="social-icons">
+      <a href="https://twitter.com/eqnoirproject" target="_blank">Twitter / X</a>
+      <a href="https://instagram.com/Eqnoirlabs" target="_blank">Instagram</a>
+      <a href="https://discord.gg/EQNOIR" target="_blank">Discord</a>
+      <a href="https://t.me/EQNOIR1" target="_blank">Telegram</a>
+    </div>
+    <div class="footer-legal">
+      EQNOIR and its website are educational and informational in nature. Nothing contained in this website constitutes financial, investment, tax, legal, or other professional advice. EQNOIR is not a financial advisor or registered investment adviser, and provides no guarantees of financial return. Participation in blockchain-based assets involves risk, including risk of loss. Users should conduct their own research and due diligence prior to participating. Token utility, access, and ecosystem features are subject to change. Historical, real-time, or future market data are informational only. Terms and access availability may vary.
+    </div>
+    <div class="footer-copy">
+      © 2026 EQNOIR. All rights reserved.
+    </div>
   </footer>
 
-  <script>
-  async function fetchTickerData() {
-    try {
-      const response = await fetch('https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x47ab12e013f1289c8c5f83f962fc01bb496beaa4');
-      const data = await response.json();
-      const pool = data.data.attributes;
-      const price = parseFloat(pool.base_token_price_usd).toFixed(12);
-      const volume = pool.volume_usd.h24.toLocaleString();
-      const liquidity = (pool.reserve_in_usd / 1000).toFixed(2);
-      const fdv = (pool.fdv_usd / 1000).toFixed(2);
-      const holders = pool.holders || '44';
-      document.getElementById('ticker-text').innerText =
-        `EQNOIR (WBNB) | PRICE: $${price} | 24H VOL: $${volume} | LIQUIDITY: $${liquidity}K | FDV: $${fdv}K | HOLDERS: ${holders} | THE FUTURE IS BLACK. THE FUTURE IS EQNOIR.`;
-    } catch (e) {
-      document.getElementById('ticker-text').innerText = "EQNOIR — Empowering Black Legacy. Data unavailable.";
-    }
-  }
-  fetchTickerData();
-  setInterval(fetchTickerData, 3600000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
