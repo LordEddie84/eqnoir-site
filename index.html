@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EQNOIR | Digital Reserve</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- TICKER (UNCHANGED) -->
+<div id="ticker">
+  <span id="ticker-content">Loading EQNOIR market data…</span>
+</div>
+
+<!-- TOP NAV -->
+<header class="top-nav">
+  <a href="index.html" class="logo">EQNOIR</a>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="enter.html">How to Buy</a>
+    <a href="reserve.html">Token</a>
+    <a href="noirhaus.html">NOIRHAUS</a>
+    <a href="circle.html">Community</a>
+  </nav>
+</header>
+
+<main class="page-content">
+  <h1>EQNOIR</h1>
+  <p class="subtitle">Afro-Futuristic Digital Reserve on Blockchain</p>
+
+  <div class="cta">
+    <a href="enter.html">How to Buy</a>
+    <a href="reserve.html">Token</a>
+    <a href="noirhaus.html">NOIRHAUS</a>
+    <a href="circle.html">Community</a>
+  </div>
+</main>
+
+<section class="legal">
+  <strong>Legal Disclaimer</strong>
+  <p>
+    EQNOIR is a blockchain-based digital asset project and is not a financial
+    advisor, broker, or investment service. Nothing on this website constitutes
+    financial advice. Cryptocurrency participation involves risk.
+  </p>
+</section>
+
+<footer class="site-footer">
+  <div class="social-modern">
+    <a href="https://x.com/eqnoirproject" target="_blank">𝕏</a>
+    <a href="https://instagram.com/Eqnoirlabs" target="_blank">IG</a>
+    <a href="https://discord.gg/EQNOIR" target="_blank">DC</a>
+    <a href="https://t.me/EQNOIR1" target="_blank">TG</a>
+  </div>
+  <p>© <span id="year"></span> EQNOIR. All Rights Reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
+<script src="js/ticker.js"></script>
+</body>
+</html>
