@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EQNOIR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="logo">
+      <h1>EQNOIR</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#noirhause">NoirHause</a></li>
+        <li><a href="#whitepapers">Whitepapers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Smooth Live Ticker -->
+  <div class="ticker-wrapper">
+    <div class="ticker">
+      <div class="ticker-track" id="ticker-track">
+        <span id="ticker-text">Loading prices...</span>
+        <span id="ticker-text-clone">Loading prices...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2>Welcome to EQNOIR</h2>
+    <p>The fastest-growing, most innovative digital reserve ecosystem.</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About EQNOIR</h2>
+    <p>EQNOIR builds generational wealth, technological advancement, and global cultural power for our community.</p>
+  </section>
+
+  <!-- NoirHause Section -->
+  <section id="noirhause">
+    <h2>NoirHause</h2>
+    <p>The exclusive community hub for EQNOIR members.</p>
+  </section>
+
+  <!-- Whitepapers Section -->
+  <section id="whitepapers">
+    <h2>Whitepapers</h2>
+    <div class="whitepaper-list">
+      <a href="whitepapers/EQNOIR-Whitepaper-v1.pdf" target="_blank">EQNOIR Whitepaper v1</a>
+      <a href="whitepapers/EQNOIR-Tokenomics.pdf" target="_blank">Tokenomics Overview</a>
+      <a href="whitepapers/EQNOIR-Roadmap.pdf" target="_blank">Roadmap</a>
+    </div>
+  </section>
+
+  <!-- Social Media Buttons -->
+  <section class="social-buttons">
+    <a href="https://twitter.com" target="_blank"><img src="icons/twitter.png" alt="Twitter"></a>
+    <a href="https://instagram.com" target="_blank"><img src="icons/instagram.png" alt="Instagram"></a>
+    <a href="https://discord.com" target="_blank"><img src="icons/discord.png" alt="Discord"></a>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>For inquiries, reach out at <a href="mailto:eqnoirproject@gmail.com">eqnoirproject@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 EQNOIR. All rights reserved.</p>
+    <p>Privacy Warning: Always verify your interactions with our ecosystem.</p>
+  </footer>
+
+  <!-- Smooth Live Ticker Script -->
+  <script>
+    async function fetchCryptoPrices() {
+      try {
+        const response = await fetch(
+          'https://api.coingecko.com/api/v3/simple/price?ids=eqnoir,bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true'
+        );
+        const data = await response.json();
+
+        const eqnoirPrice = `$EQN $${data.eqnoir.usd} (${data.eqnoir.usd_24h_change.toFixed(2)}%)`;
+        const btcPrice = `BTC $${data.bitcoin.usd} (${data.bitcoin.usd_24h_change.toFixed(2)}%)`;
+        const ethPrice = `ETH $${data.ethereum.usd} (${data.ethereum.usd_24h_change.toFixed(2)}%)`;
+        const solPrice = `SOL $${data.solana.usd} (${data.solana.usd_24h_change.toFixed(2)}%)`;
+
+        const tickerText = `${eqnoirPrice} | ${btcPrice} | ${ethPrice} | ${solPrice}`;
+
+        document.getElementById('ticker-text').textContent = tickerText;
+        document.getElementById('ticker-text-clone').textContent = tickerText;
+      } catch (error) {
+        console.error('Error fetching crypto prices:', error);
+        document.getElementById('ticker-text').textContent = 'Unable to load prices.';
+        document.getElementById('ticker-text-clone').textContent = 'Unable to load prices.';
+      }
+    }
+
+    fetchCryptoPrices();
+    setInterval(fetchCryptoPrices, 60000);
+  </script>
+
+</body>
+</html>
