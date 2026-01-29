@@ -1,0 +1,273 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0b0f0e url("assets/bg-mockup.jpg") center/cover no-repeat fixed;
+  color: #f5c97a;
+  min-height: 100vh;
+  animation: fadeIn 0.6s ease-in;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TOP TICKER (UNCHANGED)
+========================= */
+
+.ticker {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid rgba(245, 201, 122, 0.25);
+  color: #f5c97a;
+  text-align: right;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid rgba(245, 201, 122, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f5c97a;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f5c97a;
+  padding: 10px 18px;
+  border: 1px solid rgba(245, 201, 122, 0.35);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(245, 201, 122, 0.15);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main.content {
+  max-width: 1000px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1,
+h2 {
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+p {
+  color: #e8d8b0;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   CTA BUTTONS (HOMEPAGE)
+========================= */
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.cta-buttons a {
+  text-decoration: none;
+  color: #f5c97a;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 1px solid #f5c97a;
+  transition: all 0.3s ease;
+}
+
+.cta-buttons a:hover {
+  background: #f5c97a;
+  color: #0b0f0e;
+  box-shadow: 0 0 15px rgba(245, 201, 122, 0.6);
+}
+
+/* =========================
+   ROADMAP / TOKEN UTILITY
+========================= */
+
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.roadmap-item {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid rgba(245, 201, 122, 0.25);
+  transition: all 0.35s ease;
+}
+
+.roadmap-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 22px rgba(245, 201, 122, 0.3);
+}
+
+/* =========================
+   NOIRHAUS GALLERY
+========================= */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.gallery-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(245, 201, 122, 0.08),
+    rgba(0, 0, 0, 0.85)
+  );
+  border: 1px solid rgba(245, 201, 122, 0.25);
+  transition: all 0.35s ease;
+}
+
+.gallery-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 25px rgba(245, 201, 122, 0.35);
+}
+
+/* =========================
+   LEGAL DISCLAIMER
+========================= */
+
+.legal {
+  margin-top: 70px;
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(245, 201, 122, 0.4);
+  text-align: left;
+}
+
+.legal h3 {
+  margin-bottom: 12px;
+  color: #ffd27d;
+}
+
+.legal p {
+  font-size: 14px;
+  color: #e6d6ad;
+}
+
+/* =========================
+   SOCIAL MEDIA BUTTONS
+========================= */
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+.socials a {
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.social-x {
+  background: #000;
+}
+
+.social-instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.social-discord {
+  background: #5865f2;
+}
+
+.social-telegram {
+  background: #229ed9;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+  color: #cbb887;
+  border-top: 1px solid rgba(245, 201, 122, 0.25);
+  background: rgba(0, 0, 0, 0.85);
+}
