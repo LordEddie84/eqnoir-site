@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reserve | EQNOIR</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #d4af37;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* TICKER */
+.ticker {
+  background: #000;
+  border-bottom: 1px solid rgba(212,175,55,0.4);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollTicker 25s linear infinite;
+  color: #d4af37;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+@keyframes scrollTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+}
+
+nav a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* SECTION */
+.section {
+  padding: 80px 10%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg,#b8860b,#ffd700,#b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.section p {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.section ul {
+  margin-left: 20px;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.section li {
+  margin-bottom: 10px;
+}
+
+.highlight-box {
+  border: 1px solid rgba(212,175,55,0.4);
+  padding: 30px;
+  margin-top: 30px;
+  background: rgba(255,215,0,0.04);
+}
+
+/* FOOTER */
+.footer {
+  background: #000;
+  border-top: 1px solid rgba(212,175,55,0.3);
+  padding: 60px 10%;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  color: #666;
+}
+
+@media(max-width:768px){
+  nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker">
+    Loading market data...
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">The Dynasty</a>
+  <a href="reserve.html">The Reserve</a>
+  <a href="noirhaus.html">NOIRHAUS</a>
+  <a href="build.html">The Build</a>
+  <a href="circle.html">The Circle</a>
+</nav>
+
+<!-- CONTENT -->
+<section class="section">
+
+<h1>The Digital Reserve</h1>
+
+<p>
+EQNOIR is structured as a digital reserve asset — not merely a speculative token,
+but a foundational layer in a broader economic ecosystem.
+</p>
+
+<p>
+The reserve model prioritizes sustainability, transparency,
+and long-term alignment between liquidity, holders, and utility.
+</p>
+
+<h2>Reserve Architecture</h2>
+
+<ul>
+<li>Blockchain-based supply transparency</li>
+<li>Liquidity-backed trading pair infrastructure</li>
+<li>Burn strategy aligned with long-term supply management</li>
+<li>Community-aligned allocation structure</li>
+<li>Expandable reserve integrations</li>
+</ul>
+
+<div class="highlight-box">
+<p>
+The reserve is designed to evolve — integrating governance,
+utility expansion, marketplace functionality,
+and future ecosystem growth mechanisms.
+</p>
+</div>
+
+<h2>Liquidity Philosophy</h2>
+
+<p>
+Liquidity represents structural strength.
+EQNOIR prioritizes responsible liquidity positioning
+to maintain market integrity and trading functionality.
+</p>
+
+<p>
+Rather than artificial incentives,
+the focus is on transparent liquidity growth and
+measured expansion.
+</p>
+
+<h2>Supply & Burn Strategy</h2>
+
+<p>
+Supply management is part of the long-term reserve design.
+Strategic burns reduce circulating supply over time,
+strengthening scarcity mechanics while preserving ecosystem balance.
+</p>
+
+<ul>
+<li>Transparent on-chain burn events</li>
+<li>Supply reduction without destabilizing liquidity</li>
+<li>Reserve-aligned allocation planning</li>
+</ul>
+
+<h2>Utility Integration</h2>
+
+<p>
+EQNOIR is intended to power participation across:
+</p>
+
+<ul>
+<li>NOIRHAUS marketplace transactions</li>
+<li>Community governance initiatives</li>
+<li>Future event and access tiers</li>
+<li>Physical + digital ecosystem bridges</li>
+<li>Reserve-backed expansions</li>
+</ul>
+
+<h2>Long-Term Reserve Vision</h2>
+
+<p>
+The objective is not short-term volatility.
+The objective is infrastructure.
+</p>
+
+<p>
+EQNOIR aims to evolve into a multi-layer digital reserve ecosystem —
+where technology, culture, governance, and economic participation converge.
+</p>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    EQNOIR and its website are educational and informational in nature.
+    Nothing contained on this site constitutes financial, investment, tax,
+    legal, or other professional advice. Participation in blockchain-based
+    assets involves risk. Conduct your own research.
+  </div>
+  <div class="copyright">
+    © 2026 EQNOIR. All rights reserved.
+  </div>
+</footer>
+
+<script>
+const ticker = document.getElementById("ticker");
+
+async function fetchData() {
+  try {
+    const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd");
+    const data = await response.json();
+    ticker.innerHTML =
+      "Crypto Market Data | BTC: $" +
+      data.bitcoin.usd +
+      " | EQNOIR Digital Reserve | Transparency • Liquidity • Governance";
+  } catch (error) {
+    ticker.innerHTML = "Crypto Market Data | Market data unavailable";
+  }
+}
+
+fetchData();
+setInterval(fetchData, 60000);
+</script>
+
+</body>
+</html>
