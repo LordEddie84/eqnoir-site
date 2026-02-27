@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIRHAUS | Digital Marketplace</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #d4af37;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* TICKER */
+.ticker {
+  background: #000;
+  border-bottom: 1px solid rgba(212,175,55,0.4);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollTicker 25s linear infinite;
+  color: #d4af37;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+@keyframes scrollTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+}
+
+nav a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  padding: 120px 10%;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(212,175,55,0.08), transparent 60%);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg,#b8860b,#ffd700,#b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: #ccc;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* MARKET GRID */
+.market-grid {
+  padding: 80px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.market-card {
+  border: 1px solid rgba(212,175,55,0.4);
+  padding: 40px;
+  background: rgba(255,215,0,0.03);
+  transition: 0.4s;
+}
+
+.market-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(255,215,0,0.2);
+}
+
+.market-card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.market-card p {
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* FUTURE SECTION */
+.future-section {
+  padding: 100px 10%;
+  text-align: center;
+  border-top: 1px solid rgba(212,175,55,0.3);
+}
+
+.future-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.future-section p {
+  color: #ccc;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+.footer {
+  background: #000;
+  border-top: 1px solid rgba(212,175,55,0.3);
+  padding: 60px 10%;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.footer .copyright {
+  margin-top: 20px;
+  color: #666;
+}
+
+@media(max-width:768px){
+  nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker">
+    Loading market data...
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">The Dynasty</a>
+  <a href="reserve.html">The Reserve</a>
+  <a href="noirhaus.html">NOIRHAUS</a>
+  <a href="build.html">The Build</a>
+  <a href="circle.html">The Circle</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>NOIRHAUS</h1>
+  <p>
+    A decentralized digital marketplace built within the EQNOIR ecosystem.
+    NOIRHAUS is where culture, commerce, creativity, and blockchain
+    converge into a futuristic transaction hub.
+  </p>
+</section>
+
+<!-- MARKET GRID -->
+<section class="market-grid">
+
+  <div class="market-card">
+    <h3>Digital Assets</h3>
+    <p>
+      NFT collections, token-gated access, digital merchandise,
+      exclusive creator releases, and blockchain-verified ownership.
+    </p>
+  </div>
+
+  <div class="market-card">
+    <h3>Creator Economy</h3>
+    <p>
+      Empower artists, designers, developers, and innovators
+      with direct-to-community transactions powered by EQNOIR.
+    </p>
+  </div>
+
+  <div class="market-card">
+    <h3>Physical + Digital</h3>
+    <p>
+      Integrate NFC-enabled products, event passes,
+      luxury accessories, and hybrid experiences
+      backed by blockchain verification.
+    </p>
+  </div>
+
+  <div class="market-card">
+    <h3>Token Utility Layer</h3>
+    <p>
+      EQNOIR functions as the transactional reserve asset
+      across the marketplace — reinforcing ecosystem alignment.
+    </p>
+  </div>
+
+</section>
+
+<!-- FUTURE SECTION -->
+<section class="future-section">
+  <h2>The Future of NOIRHAUS</h2>
+  <p>
+    NOIRHAUS is designed to evolve into a fully integrated
+    digital district within the EQNOIR reserve ecosystem.
+    Smart contracts, governance participation,
+    exclusive membership tiers, and reserve-backed incentives
+    will power the next phase of expansion.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    EQNOIR and its website are educational and informational in nature.
+    Nothing contained on this site constitutes financial, investment, tax,
+    legal, or other professional advice. Participation in blockchain-based
+    assets involves risk. Conduct your own research.
+  </div>
+  <div class="copyright">
+    © 2026 EQNOIR. All rights reserved.
+  </div>
+</footer>
+
+<script>
+const ticker = document.getElementById("ticker");
+
+async function fetchData() {
+  try {
+    const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd");
+    const data = await response.json();
+    ticker.innerHTML =
+      "Crypto Market Data | BTC: $" +
+      data.bitcoin.usd +
+      " | NOIRHAUS Marketplace | Powered by EQNOIR";
+  } catch (error) {
+    ticker.innerHTML = "Crypto Market Data | Marketplace Experience";
+  }
+}
+
+fetchData();
+setInterval(fetchData, 60000);
+</script>
+
+</body>
+</html>
