@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EQNOIR | Digital Reserve</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background:#000;
+  color:#d4af37;
+  font-family:'Montserrat', sans-serif;
+  overflow-x:hidden;
+}
+
+/* ================= TICKER ================= */
+
+.ticker {
+  background:#000;
+  border-bottom:1px solid rgba(212,175,55,0.3);
+  overflow:hidden;
+  white-space:nowrap;
+  font-size:14px;
+}
+
+.ticker-track {
+  display:inline-block;
+  padding-left:100%;
+  animation:scrollTicker 35s linear infinite;
+  padding:10px 0;
+}
+
+@keyframes scrollTicker {
+  0% { transform:translateX(0); }
+  100% { transform:translateX(-100%); }
+}
+
+/* ================= NAV ================= */
+
+nav {
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(212,175,55,0.3);
+}
+
+nav a {
+  color:#d4af37;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover { color:#fff; }
+
+/* ================= HERO ================= */
+
+.hero {
+  height:88vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  background:url("crypto-bg.PNG") center center / cover no-repeat;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:900px;
+}
+
+.hero h1 {
+  font-family:'Playfair Display', serif;
+  font-size:5.5rem;
+  letter-spacing:4px;
+  background:linear-gradient(90deg,#b8860b,#ffd700,#b8860b);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:20px;
+}
+
+.hero p {
+  color:#ddd;
+  font-size:1.2rem;
+  margin-bottom:30px;
+}
+
+.btn {
+  padding:14px 35px;
+  border:1px solid #d4af37;
+  color:#d4af37;
+  text-decoration:none;
+  margin:10px;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#d4af37;
+  color:#000;
+}
+
+/* ================= SOCIAL ================= */
+
+.social-section {
+  padding:60px 0;
+  text-align:center;
+}
+
+.social-icons {
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.social {
+  border:1px solid #d4af37;
+  padding:10px 18px;
+  text-decoration:none;
+  color:#d4af37;
+  transition:0.3s;
+}
+
+.social:hover {
+  background:#d4af37;
+  color:#000;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  padding:60px 10%;
+  border-top:1px solid rgba(212,175,55,0.3);
+  text-align:center;
+  color:#aaa;
+  font-size:14px;
+}
+
+.footer .copyright {
+  margin-top:15px;
+  color:#666;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+  .hero h1 { font-size:3rem; }
+  nav { flex-wrap:wrap; gap:18px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LIVE PROFESSIONAL TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker">
+    Loading EQNOIR live market data...
+  </div>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">The Dynasty</a>
+<a href="reserve.html">The Reserve</a>
+<a href="noirhaus.html">NOIRHAUS</a>
+<a href="build.html">The Build</a>
+<a href="circle.html">The Circle</a>
+<a href="whitepaper.html">Whitepaper</a>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h1>EQNOIR</h1>
+<p>Built for Generational Power • Digital Reserve on Blockchain</p>
+<a href="enter.html" class="btn">Enter the Digital Reserve</a>
+<a href="reserve.html" class="btn">Explore the Token</a>
+</div>
+</section>
+
+<section class="social-section">
+<h3>Official Channels</h3>
+
+<div class="social-icons">
+
+<a href="https://x.com/eqnoirproject"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="social">Twitter / X</a>
+
+<a href="https://instagram.com/eqnoirlabs"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="social">Instagram</a>
+
+<a href="https://t.me/EQNOIR1"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="social">Telegram</a>
+
+<a href="#"
+   onclick="alert('Discord invite link coming soon'); return false;"
+   class="social">Discord</a>
+
+</div>
+</section>
+
+<footer class="footer">
+<div>
+EQNOIR and its website are educational and informational in nature.
+Nothing contained on this site constitutes financial or investment advice.
+Participation in blockchain-based assets involves risk. Conduct your own research.
+</div>
+<div class="copyright">
+© 2026 EQNOIR. All rights reserved.
+</div>
+</footer>
+
+<script>
+
+/* ================= LIVE DATA ================= */
+
+const pairAddress = "0x47ab12e013f1289c8c5f83f962fc01bb496beaa4";
+const tokenAddress = "0x21cb60543da121ae3b5473b0a051f3e638e3e69e";
+const apiKey = "KVEZFGTNVJ59PCEEFUBDPPHI9HE464EVJ7";
+
+async function updateTicker() {
+  try {
+
+    const dexRes = await fetch(`https://api.dexscreener.com/latest/dex/pairs/bsc/${pairAddress}`);
+    const dexData = await dexRes.json();
+    const pair = dexData.pairs[0];
+
+    const holderRes = await fetch(`https://api.bscscan.com/api?module=token&action=tokenholdercount&contractaddress=${tokenAddress}&apikey=${apiKey}`);
+    const holderData = await holderRes.json();
+
+    const price = parseFloat(pair.priceUsd).toFixed(10);
+    const liquidity = parseFloat(pair.liquidity.usd).toLocaleString();
+    const fdv = parseFloat(pair.fdv).toLocaleString();
+    const volume = parseFloat(pair.volume.h24).toLocaleString();
+    const change = parseFloat(pair.priceChange.h24).toFixed(2);
+    const holders = holderData.result;
+
+    document.getElementById("ticker").innerHTML =
+    `EQNOIR / WBNB | Price: $${price} | 24h: ${change}% | Liquidity: $${liquidity} | FDV: $${fdv} | 24h Vol: $${volume} | Holders: ${holders}`;
+
+  } catch {
+    document.getElementById("ticker").innerHTML =
+    "EQNOIR | Live market data temporarily unavailable";
+  }
+}
+
+updateTicker();
+setInterval(updateTicker, 60000);
+
+</script>
+
+</body>
+</html>
