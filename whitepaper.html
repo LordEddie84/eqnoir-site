@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EQNOIR Whitepaper</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background:#000;
+  color:#d4af37;
+  font-family:'Montserrat',sans-serif;
+  display:flex;
+}
+
+/* SIDE NAV */
+.sidebar {
+  width:260px;
+  height:100vh;
+  position:fixed;
+  background:#000;
+  border-right:1px solid rgba(212,175,55,0.3);
+  padding:40px 20px;
+  overflow-y:auto;
+}
+
+.sidebar h2 {
+  font-family:'Playfair Display',serif;
+  margin-bottom:30px;
+}
+
+.sidebar a {
+  display:block;
+  margin-bottom:15px;
+  color:#d4af37;
+  text-decoration:none;
+  font-size:14px;
+  transition:.3s;
+}
+
+.sidebar a:hover { color:#fff; }
+
+/* MAIN CONTENT */
+.content {
+  margin-left:260px;
+  padding:80px 10%;
+  max-width:1100px;
+}
+
+.content h1 {
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  margin-bottom:30px;
+  background:linear-gradient(90deg,#b8860b,#ffd700,#b8860b);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.content h2 {
+  font-family:'Playfair Display',serif;
+  margin-top:60px;
+  margin-bottom:20px;
+}
+
+.content p {
+  color:#ccc;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+
+.content ul {
+  color:#ccc;
+  line-height:1.8;
+  margin-left:20px;
+  margin-bottom:20px;
+}
+
+/* COLLAPSIBLE SECTIONS */
+.collapsible {
+  background:rgba(255,215,0,0.05);
+  border:1px solid rgba(212,175,55,0.3);
+  padding:15px 20px;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+.collapsible:hover {
+  background:rgba(255,215,0,0.1);
+}
+
+.collapsible-content {
+  display:none;
+  padding:20px;
+  border-left:2px solid rgba(212,175,55,0.4);
+  background:rgba(255,215,0,0.03);
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 40px;
+  border:1px solid #d4af37;
+  color:#d4af37;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.download-btn:hover {
+  background:#d4af37;
+  color:#000;
+}
+
+/* FOOTER */
+.footer {
+  margin-top:80px;
+  padding-top:40px;
+  border-top:1px solid rgba(212,175,55,0.3);
+  color:#aaa;
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  body { flex-direction:column; }
+  .sidebar {
+    position:relative;
+    width:100%;
+    height:auto;
+    border-right:none;
+    border-bottom:1px solid rgba(212,175,55,0.3);
+  }
+  .content {
+    margin-left:0;
+    padding:60px 8%;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>Whitepaper</h2>
+  <a href="#introduction">Introduction</a>
+  <a href="#philosophy">Reserve Philosophy</a>
+  <a href="#tokenomics">Tokenomics</a>
+  <a href="#liquidity">Liquidity Model</a>
+  <a href="#governance">Governance</a>
+  <a href="#marketplace">Marketplace Integration</a>
+  <a href="#roadmap">Roadmap</a>
+</div>
+
+<div class="content">
+
+<h1>EQNOIR Whitepaper</h1>
+
+<section id="introduction">
+<h2>1. Introduction</h2>
+<p>
+EQNOIR is a digital reserve protocol designed to combine blockchain transparency,
+cultural alignment, and long-term economic infrastructure.
+</p>
+<p>
+Unlike speculative tokens, EQNOIR is structured around sustainable liquidity,
+governance evolution, and ecosystem integration.
+</p>
+</section>
+
+<section id="philosophy">
+<h2>2. Reserve Philosophy</h2>
+<p>
+The reserve model prioritizes transparency, strategic burns,
+liquidity stability, and long-term ecosystem durability.
+</p>
+<p>
+EQNOIR aims to function as foundational infrastructure,
+not temporary market noise.
+</p>
+</section>
+
+<section id="tokenomics">
+<h2>3. Tokenomics</h2>
+
+<div class="collapsible">View Supply Structure</div>
+<div class="collapsible-content">
+<p>
+• Initial total supply structured for reserve mechanics<br>
+• Strategic burn events aligned with long-term scarcity<br>
+• Community allocation planning<br>
+• Liquidity pairing transparency
+</p>
+</div>
+
+<div class="collapsible">View Utility Allocation</div>
+<div class="collapsible-content">
+<p>
+• Marketplace transactions (NOIRHAUS)<br>
+• Governance voting weight<br>
+• Event access tiers<br>
+• Future ecosystem integrations
+</p>
+</div>
+
+</section>
+
+<section id="liquidity">
+<h2>4. Liquidity Model</h2>
+<p>
+Liquidity is treated as structural strength.
+Measured liquidity expansion ensures sustainable price mechanics
+and ecosystem credibility.
+</p>
+</section>
+
+<section id="governance">
+<h2>5. Governance Architecture</h2>
+<p>
+EQNOIR is designed to evolve toward structured community governance
+including proposal frameworks, voting systems, and reserve oversight.
+</p>
+</section>
+
+<section id="marketplace">
+<h2>6. Marketplace Integration</h2>
+<p>
+NOIRHAUS will integrate EQNOIR as a core transactional layer
+for digital and hybrid physical marketplace experiences.
+</p>
+</section>
+
+<section id="roadmap">
+<h2>7. Long-Term Roadmap</h2>
+<p>
+The roadmap includes infrastructure expansion, governance activation,
+marketplace deployment, and multi-layer reserve evolution.
+</p>
+</section>
+
+<a href="#" class="download-btn">Download Full PDF Version (Coming Soon)</a>
+
+<div class="footer">
+EQNOIR documentation is informational only and does not constitute financial advice.
+Participation in blockchain-based systems involves risk.
+</div>
+
+</div>
+
+<script>
+
+const collapsibles = document.querySelectorAll(".collapsible");
+
+collapsibles.forEach(btn => {
+  btn.addEventListener("click", function() {
+    const content = this.nextElementSibling;
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  });
+});
+
+</script>
+
+</body>
+</html>
