@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>EQNOIR</title>
+
+<style>
+
+body{
+background:#000;
+color:white;
+font-family:Arial;
+margin:0;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+border-bottom:1px solid #c9a227;
+}
+
+.logo{
+font-size:26px;
+color:#c9a227;
+letter-spacing:3px;
+}
+
+nav a{
+margin-left:20px;
+color:white;
+text-decoration:none;
+}
+
+nav a:hover{
+color:#c9a227;
+}
+
+.container{
+text-align:center;
+padding:60px 20px;
+}
+
+.ai-box{
+max-width:500px;
+margin:auto;
+background:#0d0d0d;
+border:2px solid #c9a227;
+border-radius:10px;
+padding:25px;
+}
+
+#chat{
+height:250px;
+overflow-y:auto;
+text-align:left;
+margin-bottom:10px;
+}
+
+input{
+width:80%;
+padding:10px;
+background:#000;
+border:1px solid #c9a227;
+color:white;
+}
+
+button{
+padding:10px 20px;
+background:#c9a227;
+border:none;
+color:black;
+cursor:pointer;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+margin-top:30px;
+}
+
+.stat{
+background:#111;
+border:1px solid #c9a227;
+padding:15px 25px;
+}
+
+.action-buttons{
+margin-top:30px;
+}
+
+.action-buttons a{
+display:inline-block;
+margin:10px;
+padding:12px 25px;
+background:#c9a227;
+color:black;
+text-decoration:none;
+font-weight:bold;
+}
+
+.section{
+max-width:800px;
+margin:auto;
+padding:60px 20px;
+}
+
+.social a{
+margin:10px;
+color:#c9a227;
+text-decoration:none;
+font-size:18px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #c9a227;
+margin-top:60px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">EQNOIR</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#buy">Buy</a>
+<a href="#community">Community</a>
+</nav>
+
+</header>
+
+
+<div class="container">
+
+<h2>KEHPRA AI ONLINE</h2>
+
+<div class="ai-box">
+
+<div id="chat">
+<p><b>Kehpra:</b> Welcome to EQNOIR. Ask me anything about the ecosystem.</p>
+</div>
+
+<input id="input" placeholder="Ask Kehpra anything...">
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+Price<br>
+<span id="price">Loading...</span>
+</div>
+
+<div class="stat">
+Liquidity<br>
+<span id="liquidity">Loading...</span>
+</div>
+
+<div class="stat">
+FDV<br>
+<span id="fdv">Loading...</span>
+</div>
+
+<div class="stat">
+24h Volume<br>
+<span id="volume">Loading...</span>
+</div>
+
+</div>
+
+
+<div class="action-buttons">
+
+<a href="#about">Learn About EQNOIR</a>
+
+<a href="https://www.geckoterminal.com/bsc/pools/0x47ab12e013f1289c8c5f83f962fc01bb496beaa4" target="_blank">
+Purchase EQNOIR
+</a>
+
+</div>
+
+</div>
+
+
+<div class="section" id="about">
+
+<h2>ABOUT EQNOIR</h2>
+
+<p>
+
+EQNOIR is a futuristic digital reserve ecosystem designed to empower communities through innovation, financial sovereignty, and generational wealth creation.
+
+Built on the BNB Smart Chain, EQNOIR integrates decentralized finance, digital marketplaces, and ecosystem reserves supporting housing, food access, legal support, and technological advancement.
+
+The mission is to build one of the most innovative community-driven digital reserves in the world.
+
+</p>
+
+</div>
+
+
+<div class="section" id="community">
+
+<h2>JOIN THE COMMUNITY</h2>
+
+<div class="social">
+
+<a href="https://twitter.com/eqnoirproject" target="_blank">Twitter</a>
+
+<a href="https://instagram.com/eqnoirlabs" target="_blank">Instagram</a>
+
+<a href="https://t.me/EQNOIR1" target="_blank">Telegram</a>
+
+<a href="#">Discord</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>Contact: eqnoirproject@gmail.com</p>
+
+<p>© 2026 EQNOIR</p>
+
+</footer>
+
+
+<script>
+
+/* KEHPRA AI CHAT */
+
+function reply(q){
+
+q=q.toLowerCase()
+
+if(q.includes("contract"))
+return "EQNOIR contract address: 0x21cb60543da121ae3b5473b0a051f3e638e3e69e"
+
+if(q.includes("buy"))
+return "Click the Purchase EQNOIR button to trade using the official liquidity pool."
+
+if(q.includes("price"))
+return "Live price data is displayed below the AI interface."
+
+return "Ask me about EQNOIR, the contract, tokenomics, or how to buy."
+
+}
+
+function sendMessage(){
+
+const input=document.getElementById("input")
+const chat=document.getElementById("chat")
+
+const question=input.value
+
+chat.innerHTML+=`<p><b>You:</b> ${question}</p>`
+
+chat.innerHTML+=`<p><b>Kehpra:</b> ${reply(question)}</p>`
+
+input.value=""
+
+chat.scrollTop=chat.scrollHeight
+
+}
+
+
+
+/* GECKOTERMINAL LIVE DATA */
+
+async function loadTokenData(){
+
+try{
+
+const response = await fetch(
+"https://api.geckoterminal.com/api/v2/networks/bsc/pools/0x47ab12e013f1289c8c5f83f962fc01bb496beaa4"
+)
+
+const data = await response.json()
+
+const attributes = data.data.attributes
+
+document.getElementById("price").innerText =
+"$" + Number(attributes.base_token_price_usd).toFixed(8)
+
+document.getElementById("liquidity").innerText =
+"$" + Number(attributes.reserve_in_usd).toLocaleString()
+
+document.getElementById("fdv").innerText =
+"$" + Number(attributes.fdv_usd).toLocaleString()
+
+document.getElementById("volume").innerText =
+"$" + Number(attributes.volume_usd.h24).toLocaleString()
+
+}
+
+catch(error){
+
+console.log("Error loading token data",error)
+
+}
+
+}
+
+loadTokenData()
+
+</script>
+
+</body>
+</html>
